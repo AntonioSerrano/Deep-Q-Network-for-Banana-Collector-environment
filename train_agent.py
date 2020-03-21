@@ -21,9 +21,10 @@ def dqn(env, brain_name, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_
         eps_end (float): minimum value of epsilon
         eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
     """
-
+    
     scores = []                        # list containing scores from each episode
     scores_window = deque(maxlen=100)  # last 100 scores
+    print_solved_flag=False            # warn when the the average reward reaches 13.0
     eps = eps_start                    # initialize epsilon
     for i_episode in range(1, n_episodes+1):
         #state = env.reset()
@@ -50,8 +51,13 @@ def dqn(env, brain_name, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
         if np.mean(scores_window)>=13.0:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
-            torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
-            break
+            print_solved_flag=True
+            #torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
+            #break
+    
+    print('\nTraining finished! Saving weights...')
+    torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
+    
     return scores
 
 
