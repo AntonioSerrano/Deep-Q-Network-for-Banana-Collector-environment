@@ -29,7 +29,7 @@ It should be noted that the states could be represented by pixels from the video
 
 A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The task is considered solved when the agent is able to collect an average reward (over 100 episodes) of at least +13.
 
-## Dependencies ##
+## Installation ##
 
 1. Clone the DRLND Repository following [these instructions](https://github.com/udacity/deep-reinforcement-learning#dependencies). You will install PyTorch, the ML-Agents toolkit, and a few more Python packages required.
 2. Download the Unity Environment. You need only to select the environment that matches your operating system:
@@ -37,6 +37,14 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
     + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
     + Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
     + Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+
+## Usage ##
+
+To train the agent:
+`python train_agent.py`
+
+To watch the agent act after training:
+`python run_agent.py`
 
 ## List of files ##
 
