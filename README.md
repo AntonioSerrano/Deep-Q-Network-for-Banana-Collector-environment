@@ -41,10 +41,14 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 ## Usage ##
 
 To train the agent:
-`python train_agent.py`
+```python
+python train_agent.py
+```
 
 To watch the agent act after training:
-`python run_agent.py`
+```python
+python run_agent.py
+```
 
 ## List of files ##
 
