@@ -49,7 +49,7 @@ def dqn(env, brain_name, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_
         print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)), end="")
         if i_episode % 100 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
-        if np.mean(scores_window)>=13.0:
+        if np.mean(scores_window)>=13.0 and print_solved_flag==False:
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(i_episode, np.mean(scores_window)))
             print_solved_flag=True
             #torch.save(agent.qnetwork_local.state_dict(), 'checkpoint.pth')
@@ -81,6 +81,9 @@ def main():
 
     # close environment
     env.close()
+
+    # Write scores in file for later plot edition:
+    np.save("scores.txt", scores)  
 
     # plot the scores
     fig = plt.figure()
