@@ -56,9 +56,9 @@ python run_agent.py
 
 ## List of files ##
 
-+ train_agent.py: script to start the agent training. Just type `python train_agent.py`
++ train_agent.py: script to start the agent training.
 + dqn_agent.py: it describes the classes for both the agent and the experience replay handler. It also states the values for the RL hyperparameters.
 + model.py: it contains the neural network architecture.
-+ run_agent.py: once the agent has been trained, we can watch him behave according to the (optimal) learned policy. Type `python run_agent.py` to see the agent in action
++ run_agent.py: once the agent has been trained, we can watch him behave according to the (optimal) learned policy.
 + checkpoint.pth: it contains the neural network weights learned during training. It is necessary to run the script run_agent.py 
-+ report.md: a brief report that describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
++ [report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/report.md): a brief report that describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
