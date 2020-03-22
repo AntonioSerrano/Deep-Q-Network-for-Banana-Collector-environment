@@ -41,7 +41,7 @@ As for the optimizer, Adam was chosen to do the job.
 
 The following plot shows the evolution of the average reward (over 100 episodes) during training over 2,000 episodes. As it can be seen, the agent steadily learns how to maximize the average reward. In particular, it reaches the goal of +13 around episode no. 500:
 
-<center><img src="average_reward.png"></center>
+<center><img src="./media/average_reward.png"></center>
 
 ## Future Work ##
 
