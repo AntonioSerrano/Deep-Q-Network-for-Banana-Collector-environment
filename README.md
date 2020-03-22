@@ -6,6 +6,10 @@ This repository contains an implementation of the vanilla [Deep Q-Network](https
 
 The environment involves one agent to solve the episodic task at hand. The goal is to teach the agent from scratch to collect the yellow bananas on the floor while avoiding the blue ones.
 
+<p align="center"> 
+    <img src="dqn_banana_in_action.gif" height="50%" width="50%">
+</p>
+
 The action space consists of 4 actions:
 
     0 - walk forward
