@@ -7,13 +7,13 @@ In RL, an agent interacts with a given environment trying to learn a policy func
 The agent tries to learn the optimal Q-value function that tell him the quality of each possible action for a given state. In each iteration of the algorithm, these Q-values are updated following this rule:
 
 <p align="center"> 
-    <img src="q_updating_rule.gif">
+    <img src="./media/q_updating_rule.gif">
 </p>
 
 Additionally, a CNN is used to approximate the Q-value function. Those weights are updated iteratively during the training process. In every of those iterations, the goal is to minimize the loss function below:
 
 <p align="center"> 
-    <img src="dqn_loss_function.gif">
+    <img src="./media/dqn_loss_function.gif">
 </p>
 
 In each timestep, experience tuples (s<sub>t</sub>, a<sub>t</sub>, r<sub>t</sub>, s<sub>t+1</sub>, bool_episode_done) are fed to the neural network to output the Q-values for every state-action pair. 
