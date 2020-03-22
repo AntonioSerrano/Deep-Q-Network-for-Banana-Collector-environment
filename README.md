@@ -61,4 +61,4 @@ python run_agent.py
 + model.py: it contains the neural network architecture.
 + run_agent.py: once the agent has been trained, we can watch him behave according to the (optimal) learned policy.
 + checkpoint.pth: it contains the neural network weights learned during training. It is necessary to run the script run_agent.py 
-+ [report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/report.md): a brief report that describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
++ [report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md): a brief report that describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
