@@ -35,7 +35,29 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 
 ## Installation ##
 
-1. Clone the DRLND Repository following [these instructions](https://github.com/udacity/deep-reinforcement-learning#dependencies). You will install PyTorch, the ML-Agents toolkit, and a few more Python packages required.
+1. Clone the DRLND Repository and install PyTorch, the ML-Agents toolkit, and a few more Python packages required following these steps:
+
+    1.1. Create (and activate) a new environment with Python 3.6.
+
+        - __Linux__ or __Mac__: 
+        ```bash
+        conda create --name drlnd python=3.6
+        source activate drlnd
+        ```
+        - __Windows__: 
+        ```bash
+        conda create --name drlnd python=3.6 
+        activate drlnd
+        ```
+
+    1.2. Clone the repository and navigate to the `python/` folder.  Then, install several dependencies.
+    ```bash
+    git clone https://github.com/udacity/deep-reinforcement-learning.git
+    cd deep-reinforcement-learning/python
+    pip install .
+    ```
+    If the last command fails, be sure that you are using the corresponding pip for the python executable from the conda's environment by doing `python -m pip install .`
+
 2. Download the Unity Environment. You need only to select the environment that matches your operating system:
     + Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
     + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
