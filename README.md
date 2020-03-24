@@ -35,9 +35,9 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 
 ## Installation ##
 
-1. Clone the DRLND Repository and install PyTorch, the ML-Agents toolkit, and a few more Python packages required following these steps:
+1. Create conda's virtual environment, clone DRLND repo, and Python packages following these steps:
 
-    1.1. Create (and activate) a new environment with Python 3.6.
+    1.1. Create (and activate) a new conda's environment with Python 3.6.
         
     - __Linux__ or __Mac__: 
     ```bash
