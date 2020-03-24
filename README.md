@@ -57,6 +57,7 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
     pip install .
     ```
     If the last command fails, be sure that you are using the corresponding pip for the python executable from the conda's environment by doing `python -m pip install .`
+    
     For more details follow [the instructions](https://github.com/udacity/deep-reinforcement-learning#dependencies) from the DRLND repository.
 
 2. Download the Unity Environment. You need only to select the environment that matches your operating system:
