@@ -49,6 +49,8 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
         + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana.app.zip)
         + Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana_Windows_x86.zip)
         + Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana_Windows_x86_64.zip)
+    
+    After unzipping the file, move it to the folder of the environment you want to use e.g. `features_env/Banana.app` or `visual_env/VisualBanana_Linux/`
 
 ## Usage ##
 
