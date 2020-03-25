@@ -1,3 +1,12 @@
+## List of files in each environment ##
+
++ train_agent.py: script to start the agent training.
++ dqn_agent.py: it describes the class to manage the agent, including the values for the RL hyperparameters.
++ replay_buffer.py: it describes the class to handle the experience replay database. 
++ model.py: it contains the neural network architecture.
++ run_agent.py: once the agent has been trained, we can watch him behave according to the (optimal) learned policy.
++ checkpoint.pth: it contains the neural network weights learned during training. It is necessary to run the script run_agent.py 
+
 ## Deep Q-Network operation
 
 Deep Q-Network (DQN) is a Reinforcement Learning (RL) algorithm that successfully combined the [Q-learning algorithm](https://link.springer.com/article/10.1007/BF00992698) with a neural networks for the first time back in 2013. A single Convolutional Neural Network (CNN) was able to learn from scratch how to play several video games from the Atari 2600 console better than professional human players in most of those games.
@@ -33,16 +42,18 @@ Additional measures to enable and speed up convergence of the algorithm are adop
 
 ## Neural network architecture
 
-Since non-visual vectorized representation of the states is considered for this environment, a feedforward neural network is chosen (instead of a CNN). This neural net comprises two hidden layers plus the final layer. The hidden layers are made of 64 units each. The final layer outputs a predicted Q-value for each of the possible 4 actions. The non-linear activation function selected is ReLU. No dropout layers were added to prevent overfitting.
++ Banana environment: a feedforward neural network with two hidden layers plus the final layer. The hidden layers are made of 64 units each. The final layer outputs a predicted Q-value for each of the possible 4 actions. The non-linear activation function selected is ReLU. No dropout layers were added to prevent overfitting.
+
++ Visual Banana environment: it includes the same CNN architcture as in [Mnih et al. (2015)](https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf) i.e. 3 convolutional layers (with no pooling or dropout layers) and 2 fully-connected layers at the end.
 
 As for the optimizer, Adam was chosen to do the job.
 
 ## Training results
 
-The following plot shows the evolution of the average reward (over 100 episodes) during training over 2,000 episodes. As it can be seen, the agent steadily learns how to maximize the average reward. In particular, it reaches the goal of +13 around episode no. 500:
+The following plot shows the evolution of the average reward (over 100 episodes) during training over 2,000 episodes for the Banana environment . As it can be seen, the agent steadily learns how to maximize the average reward. In particular, it reaches the goal of +13 around episode no. 500:
 
 <center><img src="./media/average_reward.png"></center>
 
 ## Future Work
 
-It should be noted, however, that when executing run_agent.py, the agent still acts pretty roughly. A new environment based on a visual representation of the states (i.e. pixels) could be compiled in order to use CNNs and achieve a higher average reward. In addition, DQN later extensions such as [double deep Q-learning](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847), a [dueling network architecture](https://arxiv.org/pdf/1511.06581.pdf), and a [prioritized experience replay](https://arxiv.org/pdf/1511.05952.pdf) could be considered to speed up convergence of the algorithm.
+DQN later extensions such as [double deep Q-learning](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847), a [dueling network architecture](https://arxiv.org/pdf/1511.06581.pdf), and a [prioritized experience replay](https://arxiv.org/pdf/1511.05952.pdf) could be considered to speed up convergence of the algorithm.
