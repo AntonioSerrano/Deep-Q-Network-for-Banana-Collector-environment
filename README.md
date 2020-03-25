@@ -17,72 +17,69 @@ The action space consists of 4 actions:
     2 - turn left
     3 - turn right
 
-The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction. For example:
+The repository includes two separate environments according to how states are represented:
++ Banana environment: the state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction. For example:
 
-```python
-[1.         0.         0.         0.         0.84408134 0.
- 0.         1.         0.         0.0748472  0.         1.
- 0.         0.         0.25755    1.         0.         0.
- 0.         0.74177343 0.         1.         0.         0.
- 0.25854847 0.         0.         1.         0.         0.09355672
- 0.         1.         0.         0.         0.31969345 0.
- 0.        ]
-```
+    ```python
+    [1.         0.         0.         0.         0.84408134 0.
+    0.         1.         0.         0.0748472  0.         1.
+    0.         0.         0.25755    1.         0.         0.
+    0.         0.74177343 0.         1.         0.         0.
+    0.25854847 0.         0.         1.         0.         0.09355672
+    0.         1.         0.         0.         0.31969345 0.
+    0.        ]
+    ```
 
-It should be noted that the states could be represented by pixels from the video game engine but for this assignment the non-visual features were preferred.
++ Visual Banana environment: states are represented by the pixels from Unity's game engine. Each state is an 84 x 84 RGB image, corresponding to the agent's first-person view of the environment.
 
 A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The task is considered solved when the agent is able to collect an average reward (over 100 episodes) of at least +13.
 
 ## Installation ##
 
-1. Create conda's virtual environment, clone DRLND repository, and Python packages following these steps:
-
-    1.1. Create (and activate) a new conda's environment with Python 3.6.
-        
-    - __Linux__ or __Mac__: 
-    ```bash
-    conda create --name drlnd python=3.6
-    source activate drlnd
-    ```
-    - __Windows__: 
-    ```bash
-    conda create --name drlnd python=3.6 
-    activate drlnd
-    ```
-
-    1.2. Clone the repository and navigate to the `python/` folder.  Then, install several dependencies.
-    ```bash
-    git clone https://github.com/udacity/deep-reinforcement-learning.git
-    cd deep-reinforcement-learning/python
-    pip install .
-    ```
-    If the last command fails, be sure that you are using the corresponding pip for the python executable from the conda's environment by doing `python -m pip install .`
+1. Clone the DRLND Repository following [these instructions](https://github.com/udacity/deep-reinforcement-learning#dependencies). You will install PyTorch, the ML-Agents toolkit, and a few more Python packages required.
+2. Download the Unity Environments. You need only to select the environment that matches your operating system:
+    + Banana environment:
+        + Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
+        + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
+        + Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
+        + Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
     
-    For more details follow [the instructions](https://github.com/udacity/deep-reinforcement-learning#dependencies) from the DRLND repository.
-
-2. Download the Unity Environment. You need only to select the environment that matches your operating system:
-    + Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
-    + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
-    + Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
-    + Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+    + Visual Banana environment:
+        + Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana_Linux.zip)
+        + Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana.app.zip)
+        + Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana_Windows_x86.zip)
+        + Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/VisualBanana_Windows_x86_64.zip)
 
 ## Usage ##
 
-To train the agent:
-```python
-python train_agent.py
-```
++ Banana environment:
+    + To train the agent on Mac:
+        ```python
+        python train_agent.py --env_path Banana.app
+        ```
+    + To train the agent on Linux (64 bits):
+        ```python
+        python train_agent.py --env_path Banana.app
+        ```
+    + To watch the agent act after training:
+        ```python
+        python run_agent.py
+        ```
 
-To watch the agent act after training:
-```python
-python run_agent.py
-```
++ Visual Banana environment:
+    + To train the agent on Mac:
+        ```python
+        python train_agent.py --env_path VisualBanana.app
+        ```
+    + To train the agent on Linux (64 bits):
+        ```python
+        python train_agent.py --env_path VisualBanana_Linux/Banana.x86_64
+        ```
+    + To watch the agent act after training:
+        ```python
+        python run_agent.py
+        ```
 
-## List of files ##
+## Detailed report ##
 
-+ train_agent.py: script to start the agent training.
-+ dqn_agent.py: it describes the classes for both the agent and the experience replay handler. It also states the values for the RL hyperparameters.
-+ model.py: it contains the neural network architecture.
-+ run_agent.py: once the agent has been trained, we can watch him behave according to the (optimal) learned policy.
-+ checkpoint.pth: it contains the neural network weights learned during training. It is necessary to run the script run_agent.py 
-+ [report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md): a brief report that describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
+[report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md) describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
