@@ -55,30 +55,38 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 ## Usage ##
 
 + Banana environment:
+    + Go to the environment folder:
+        ```console
+        cd features_env
+        ```
     + To train the agent on Mac:
-        ```python
+        ```console
         python train_agent.py --env_path Banana.app
         ```
     + To train the agent on Linux (64 bits):
-        ```python
+        ```console
         python train_agent.py --env_path Banana.app
         ```
     + To watch the agent act after training:
-        ```python
+        ```console
         python run_agent.py
         ```
 
 + Visual Banana environment:
+    + Go to the environment folder:
+        ```console
+        cd visual_env
+        ```
     + To train the agent on Mac:
-        ```python
+        ```console
         python train_agent.py --env_path VisualBanana.app
         ```
     + To train the agent on Linux (64 bits):
-        ```python
+        ```console
         python train_agent.py --env_path VisualBanana_Linux/Banana.x86_64
         ```
     + To watch the agent act after training:
-        ```python
+        ```console
         python run_agent.py
         ```
 
