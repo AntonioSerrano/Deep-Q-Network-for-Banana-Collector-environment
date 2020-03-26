@@ -94,4 +94,23 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
 
 ## Detailed report ##
 
-[report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md) describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process. 
+[report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md) describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process.
+
+## Contributing ##
+
+I would love pull requests from everyone that could spot bugs or add new feature to this implementation. Here are some issues you can contribute in:
++ Run Visual Banana environment with no_graphic option: as far as I know, the ml-agents library force you to render the environment to use visual observations. The drawback of this is that it affects performance since you are partially spending resources for rendering. Additionally, you must configure an X server in case you want to run the visual environment from a remote machine (good luck with that...).
+
+How to submit a pull request:
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this [repository](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment).
+2. Create a [topic branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
+3. Implement your feature or bug fix.
+4. Add, commit, and push your changes.
+5. Submit a [pull request](https://help.github.com/articles/using-pull-requests/).
+
+## Credits and license ##
+
+This implementation of DQN has been created by [Antonio Serrano](https://github.com/AntonioSerrano) based on [solution](https://github.com/udacity/deep-reinforcement-learning/tree/master/dqn/solution) provided in Udacity's [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893). The original algorithm was developed by [Mnih and his colleagues](https://arxiv.org/pdf/1312.5602) at Google DeepMind.
+
+The content of this repository is licensed under a [MIT License](https://opensource.org/licenses/MIT).
