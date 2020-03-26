@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # Deep Q-Network for Banana Collector environment #
 
 This repository contains an implementation of the vanilla [Deep Q-Network](https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf) algorithm to solve the Banana Collector environment included in Unity's [ml-agents library](https://arxiv.org/pdf/1809.02627.pdf). The goal is to teach an AI's agent from scratch to collect the yellow bananas on the floor while avoiding the blue ones. It is written in Python and based on the PyTorch library. This project is the first exercise included in the [Deep Reinforcement Learning Nanodegree](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893).
