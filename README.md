@@ -67,7 +67,7 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
         ```
     + To train the agent on Linux (64 bits):
         ```console
-        $ python train_agent.py --env_path Banana.app
+        $ python train_agent.py --env_path Banana_Linux/Banana.x86_64
         ```
     + To watch the agent act after training:
         ```console
