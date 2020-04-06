@@ -56,4 +56,6 @@ The following plot shows the evolution of the average reward (over 100 episodes)
 
 ## Future Work
 
-DQN later extensions such as [double deep Q-learning](https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/download/12389/11847), a [dueling network architecture](https://arxiv.org/pdf/1511.06581.pdf), and a [prioritized experience replay](https://arxiv.org/pdf/1511.05952.pdf) could be considered to speed up convergence of the algorithm.
++ Run Visual Banana environment with no_graphic option. As far as I know, the ml-agents library force you to render the environment to use visual observations. The drawback of this is that it affects performance since you are partially spending resources for rendering. Additionally, you must configure an X server in case you want to run the visual environment from a remote machine (good luck with that...).
++ Implement the frame skipping technique for VisualBanana environment.
++ Meta-Learning: add some kind of [Meta-Learning](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(19)30061-0) scheme as in [Duan et al. (2016)](https://arxiv.org/pdf/1611.02779) based on Recurrent Neural Networks to be able to solve similar tasks avoiding training from scratch. Of course, first it would be necessary to create other Unity environments with similar tasks.
