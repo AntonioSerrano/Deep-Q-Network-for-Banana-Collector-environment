@@ -84,8 +84,8 @@ def dqn(env, brain_name, agent, n_episodes=2000, max_t=1000, eps_start=1.0, eps_
 def main():
     # Parse arguments:	
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@')	
-    parser.add_argument("--env_path", type=str, help='Path to the ml-agents environment file')	
-    args = parser.parse_args()	
+    parser.add_argument("--env_path", type=str, help='Path to the ml-agents environment file')
+    args = parser.parse_args()
         
     # instantiate environment. Make sure you don't have the same environment 
     # already opened in jupyter	notebook or with other python
