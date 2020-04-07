@@ -92,16 +92,6 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
         $ python run_agent.py
         ```
 
-## DQN extensions and image processing
-
-DQN extensions of [Double Q-learning](https://arxiv.org/pdf/1509.06461), [Dueling architecture](https://arxiv.org/pdf/1511.06581), and [Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952) are activated by default. For shake of simplicity, I decided not to parametrized them. So, if you prefer to deactivate them, just
-+ Double Q-learning: go to the beginning of `features_env/dqn_agent.py` (or `visual_env/dqn_agent.py`) and turn `double_dqn=False`
-+ Dueling architecture: go to the beginning of `features_env/model.py` (or `visual_env/model.py`) and turn `dueling=False`
-+ Prioritized Experience Replay: go to the beginning of `features_env/dqn_agent.py` (or `visual_env/dqn_agent.py`) and `features_env/replay_buffer.py` (or `visual_env/replay_buffer.py`). Then turn `prioritized=False`
-For shake of clarity as well, I decided to use simple if statements to activate/deactivate these extensions. The downside is that a bunch of code lines are repeated. But this code perseus more educational/illustrative goals, rather than efficiency.
-
-As for image processing, the implementation transforms color images into grayscale frames. Unlike the original [Arcade Learning Environment (ALE)](https://github.com/mgbellemare/Arcade-Learning-Environment), frames from Unity's environment are already provided in 84x84 pixels, so there is no need of downsampling. Frames in each time step are also stacked in a series of 4 images to feed the neural network. I am not 100% sure, but a similar frame skipping technique would be more probably more efficient in the VisualBanana environment as well.
-
 ## Detailed report
 
 [report.md](https://github.com/AntonioSerrano/Deep-Q-Network-for-Banana-Collector-environment/blob/master/report.md) describes the learning algorithm, along with the chosen hyperparameters and the neural network architecture. It also includes a chart with the evolution of the average reward (over 100 episodes) during the training process.
