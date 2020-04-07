@@ -40,6 +40,10 @@ Additional measures to enable and speed up convergence of the algorithm are adop
     LR = 5e-4               # learning rate 
     UPDATE_EVERY = 4        # how often to update the network
 
+## Image processing
+
+This implementation transforms color images into grayscale frames. Unlike the original [Arcade Learning Environment (ALE)](https://github.com/mgbellemare/Arcade-Learning-Environment), frames from Unity's environment are already provided in 84x84 pixels, so there is no need of downsampling. Frames in each time step are also stacked in a series of 4 images to feed the neural network. I am not 100% sure, but a similar frame skipping technique would be more probably more efficient in the VisualBanana environment as well.
+
 ## Neural network architecture
 
 + Banana environment: a feedforward neural network with two hidden layers plus the final layer. The hidden layers are made of 64 units each. The final layer outputs a predicted Q-value for each of the possible 4 actions. The non-linear activation function selected is ReLU. No dropout layers were added to prevent overfitting.
@@ -47,6 +51,15 @@ Additional measures to enable and speed up convergence of the algorithm are adop
 + Visual Banana environment: it includes the same CNN architcture as in [Mnih et al. (2015)](https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf) i.e. 3 convolutional layers (with no pooling or dropout layers) and 2 fully-connected layers at the end.
 
 As for the optimizer, Adam was chosen to do the job.
+
+## DQN extensions
+
+DQN extensions of [Double Q-learning](https://arxiv.org/pdf/1509.06461), [Dueling architecture](https://arxiv.org/pdf/1511.06581), and [Prioritized Experience Replay](https://arxiv.org/pdf/1511.05952) are activated by default. For shake of simplicity, I decided not to parametrized them. So, if you prefer to deactivate them, just
++ Double Q-learning: go to the beginning of `features_env/dqn_agent.py` (or `visual_env/dqn_agent.py`) and turn `double_dqn=False`
++ Dueling architecture: go to the beginning of `features_env/model.py` (or `visual_env/model.py`) and turn `dueling=False`
++ Prioritized Experience Replay: go to the beginning of `features_env/dqn_agent.py` (or `visual_env/dqn_agent.py`) and `features_env/replay_buffer.py` (or `visual_env/replay_buffer.py`). Then turn `prioritized=False`
+
+For shake of clarity as well, I decided to use simple if statements to activate/deactivate these extensions. The downside is that a bunch of code lines are repeated. But this code perseus more educational/illustrative goals, rather than efficiency.
 
 ## Training results
 
