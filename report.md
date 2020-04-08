@@ -42,7 +42,7 @@ Additional measures to enable and speed up convergence of the algorithm are adop
     ALPHA = 0.6             # degree of randomness for sampling probabilty (0 = pure uniform randomess; 1 = only use priorities)
     BETA = 0.4              # initial value for beta, which controls how much importance weights affect learning
     BETA_ITERS = 25000      # number of iterations over which beta will be annealed from initial value to 1
-    EPSILON_PER = 0.2       # prioritized experience replay epsilon. A very small number just to prevent zero divion for probabilities
+    EPSILON_PER = 0.2       # prioritized experience replay epsilon. A very small number just to prevent tuples with zero priority to be completely ignore
 
 ## Image processing
 
