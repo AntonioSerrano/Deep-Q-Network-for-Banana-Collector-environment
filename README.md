@@ -61,6 +61,7 @@ A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is
         ```console
         $ cd features_env
         ```
+    + If you prefer to work with Jupyter Notebook, there is a notebook called `Navigation.ipynb` for this environment based on manual features. If you prefer to work from the terminal, go to the next step.
     + To train the agent on Mac:
         ```console
         $ python train_agent.py --env_path Banana.app
